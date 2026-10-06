@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE PARA A PESSOA QUE EU MAIS AMO NO MUNDO</title>
+
+    <style>
+       body {
+    background-image: url('https://www.gatheringbeauty.com/s/White-Heart-Desktop-Wallpaper.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+
+
+        }
+
+        .painel {
+    margin: 20px auto;
+    background-color: #f7d9da;
+    width: 90%;
+    max-width: 500px;
+    min-height: 550px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Cambria';
+    box-sizing: border-box;
+}
+
+        #sim{
+    height: 40px;
+    min-width: 100px;
+    padding: 0 12px;
+    background-color: rgb(36, 2, 231);
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: -50px;
+    white-space: nowrap;
+}
+
+      #nao{
+    position: absolute;
+    min-height: 40px;
+    min-width: 60px;
+    padding: 8px 12px;
+    background-color: rgb(255, 0, 0);
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+    
+
+    </style>
+
+</head>
+<body>
+
+
+    <div class="painel">
+        <h1>&#9829 MINHA PRINCESA!! &#9829</h1>
+        <br>
+
+        <img src="https://media3.giphy.com/media/bjkV301j0U2Mc4orf9/200.gif?cid=6c09b952zkjzalliwoes0yyd90gm96wtfrl3bbm2l3flyg9o&ep=v1_gifs_search&rid=200.gif&ct=g">
+        <br>
+        <br>
+        <h3>Eu te lobo ❤️</h3>
+        
+
+        <button id="sim" onclick="parabens()">Eu também!❤️</button>
+           <button id="nao">Não!</button>
+
+
+        
+       </div>
+
+      <script>
+     let tentativas = 0;
+     const botaoNao = document.getElementById("nao");
+
+    botaoNao.addEventListener("pointerenter", fuja);
+    botaoNao.addEventListener("pointerdown", fuja);
+
+
+ function fuja(event){
+    event.preventDefault();
+
+    var botaoNao = document.getElementById("nao");
+
+    var larguraJanela = window.innerWidth;
+    var alturaJanela = window.innerHeight;
+
+    var margem = 20;
+
+    var maxX = larguraJanela - botaoNao.offsetWidth - margem;
+    var maxY = alturaJanela - botaoNao.offsetHeight - margem;
+
+    var aleatorioX = Math.floor(Math.random() * maxX);
+    var aleatorioY = Math.floor(Math.random() * maxY);
+
+    botaoNao.style.left = Math.max(margem, aleatorioX) + "px";
+    botaoNao.style.top = Math.max(margem, aleatorioY) + "px";
+
+    tentativas++;
+
+    document.getElementById("sim").style.transform =
+        "scale(" + (1 + tentativas * 0.15) + ")";
+
+    if (tentativas == 1) {
+        botaoNao.innerText = "Tem certeza? 🥺";
+    } 
+    else if (tentativas == 2) {
+        botaoNao.innerText = "Pensa bem...";
+    } 
+    else if (tentativas == 3) {
+        botaoNao.innerText = "Não faz isso 😭";
+    } 
+    else if (tentativas == 4) {
+        botaoNao.innerText = "Por favor 🥺";
+    } 
+    else if (tentativas == 5) {
+        botaoNao.innerText = "Aceita logo! ❤️";
+    } 
+    else {
+        botaoNao.innerText = "Só tem o SIM! 😤❤️";
+    }
+}
+
+
+    
+        function parabens(){
+    document.querySelector(".painel").innerHTML = `
+        <h1>❤️ EU TAMBÉM TE LOUBO ❤️</h1>
+
+        <img src="https://media3.giphy.com/media/bjkV301j0U2Mc4orf9/200.gif?cid=6c09b952zkjzalliwoes0yyd90gm96wtfrl3bbm2l3flyg9o&ep=v1_gifs_search&rid=200.gif&ct=g">
+
+        <h2>Minha princesa 🥰</h2>
+
+        <p>
+            Queria agradecer por sempre me dar a honra de poder estar ao seu lado,
+            conversar com você e compartilhar tantos momentos.
+        </p>
+
+        <p>
+            Você é uma pessoa incrível, muito bonita, meiga, divertida
+            e com um jeitinho que eu adoro. ❤️
+        </p>
+
+        <p>
+            Obrigado por sempre me dar atenção, por ser tão carinhosa comigo
+            e por tornar meus dias um pouquinho melhores.
+        </p>
+
+        <h2>Ontem, hoje, amanhã e SEMPRE eu irei amar você ❤️</h2>
+    `;
+}
+    </script>
+
+
+
+    
+</body>
+</html>
